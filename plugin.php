@@ -41,26 +41,16 @@ yourls_add_filter( 'get_request', 'detect_mobile_device' );
  *
  */
 function is_link_defined( $keyword ) {
-    $protocol = (isset($_SERVER['HTTPS'])) ? "https://" : "http://";
+    global $ydb;
 
-    if ( function_exists('curl_exec') ) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $protocol . $_SERVER["HTTP_HOST"] . '/' . $keyword );
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        $response = curl_exec($ch);
+    $keyword = yourls_sanitize_keyword( $keyword );
+    $existence = false;
 
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        $redirect = curl_getinfo($ch, CURLINFO_REDIRECT_URL);
-
-        if ( $httpCode == 301 || $httpCode == 302 || $httpCode == 200) {
-            if ( ! strcmp($protocol . $_SERVER["HTTP_HOST"], rtrim($redirect, '/')) ) {
-                return false;
-            }
-        }
-
-        curl_close($ch);
+    if ( $_SERVER['REQUEST_URI'] != '/' ) {
+      $existence = $ydb->get_var( "SELECT COUNT(`keyword`) FROM ". YOURLS_DB_TABLE_URL ." WHERE LOWER(`keyword`) = LOWER('$keyword');" );
     }
-    return true;
+
+    return $existence;
 }
 
 
