@@ -63,6 +63,14 @@ function is_link_defined( $keyword ) {
  *
  */
 function detect_mobile_device( $keyword ) {
+    /**
+     * do not apply mobile detection for valid user
+     * or it will break "stats" feature: http://short.en/keyword+ (endwith +)
+     */
+    if( yourls_is_valid_user() === true ) {
+        return $keyword;
+    }
+
     $detect = new Mobile_Detect;
     $result = $keyword;
 
