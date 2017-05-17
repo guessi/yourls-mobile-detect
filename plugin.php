@@ -41,16 +41,7 @@ yourls_add_filter( 'get_request', 'detect_mobile_device' );
  *
  */
 function is_link_defined( $keyword ) {
-    global $ydb;
-
-    $keyword = yourls_sanitize_keyword( $keyword );
-    $existence = false;
-
-    if ( $_SERVER['REQUEST_URI'] != '/' ) {
-      $existence = $ydb->get_var( "SELECT COUNT(`keyword`) FROM ". YOURLS_DB_TABLE_URL ." WHERE LOWER(`keyword`) = LOWER('$keyword');" );
-    }
-
-    return $existence;
+    return ! yourls_keyword_is_free( yourls_sanitize_keyword( $keyword ) );
 }
 
 
