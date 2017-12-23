@@ -14,7 +14,7 @@ Author URI: https://github.com/guessi
 /**
  *
  * Upstream Library Included:
- * - https://github.com/serbanghita/Mobile-Detect/blob/2.8.25/Mobile_Detect.php
+ * - https://github.com/serbanghita/Mobile-Detect/blob/2.8.30/Mobile_Detect.php
  *
  * License: https://github.com/serbanghita/Mobile-Detect
  *
