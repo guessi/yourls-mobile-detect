@@ -1,3 +1,8 @@
+1.0.3
+=====
+
+* bump Mobile_Detect.php version (2.8.33)
+
 1.0.2
 =====
 
