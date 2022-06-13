@@ -5,7 +5,7 @@
 Plugin Name: detect-mobile-device
 Plugin URI: https://github.com/guessi/yourls-mobile-detect
 Description: A simple plugin for converting query string by device type
-Version: 1.0.5
+Version: 1.0.6
 Author: guessi
 Author URI: https://github.com/guessi
 
@@ -14,9 +14,9 @@ Author URI: https://github.com/guessi
 /**
  *
  * Upstream Library Included:
- * - https://github.com/serbanghita/Mobile-Detect/blob/2.8.37/Mobile_Detect.php
+ * - https://github.com/serbanghita/Mobile-Detect/blob/2.8.39/Mobile_Detect.php
  *
- * License: https://github.com/serbanghita/Mobile-Detect
+ * License: https://github.com/serbanghita/Mobile-Detect/blob/master/LICENSE
  *
  */
 require_once('Mobile_Detect.php');
