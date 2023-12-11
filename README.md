@@ -1,7 +1,7 @@
 YOURLS Plugin - Mobile Detect
 =============================
 
-Plugin for [YOURLS](http://yourls.org) 1.7+
+Plugin for [YOURLS](http://yourls.org) 1.9+
 
 
 Description
