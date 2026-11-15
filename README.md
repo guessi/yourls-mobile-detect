@@ -1,7 +1,7 @@
 YOURLS Plugin - Mobile Detect
 =============================
 
-Plugin for [YOURLS](http://yourls.org) 1.9+
+Plugin for [YOURLS](http://yourls.org) 1.9+ (requires PHP 8.2+, use 3.0.0 for older PHP)
 
 
 Description
