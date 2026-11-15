@@ -13,6 +13,14 @@ Author URI: https://github.com/guessi
 
 /**
  *
+ *  no direct call
+ *
+ */
+if( !defined( 'YOURLS_ABSPATH' ) ) die();
+
+
+/**
+ *
  * Upstream Library Included:
  * - https://github.com/serbanghita/Mobile-Detect/tree/4.11.0/src
  *
@@ -21,14 +29,6 @@ Author URI: https://github.com/guessi
  *
  */
 require_once __DIR__ . '/mobiledetect/standalone/autoloader.php';
-
-
-/**
- *
- *  no direct call
- *
- */
-if( !defined( 'YOURLS_ABSPATH' ) ) die();
 
 
 yourls_add_filter( 'get_request', 'detect_mobile_device' );
