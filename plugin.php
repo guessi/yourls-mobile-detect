@@ -30,6 +30,8 @@ if( !defined( 'YOURLS_ABSPATH' ) ) die();
  */
 require_once __DIR__ . '/mobiledetect/standalone/autoloader.php';
 
+use Detection\MobileDetect;
+
 
 yourls_add_filter( 'get_request', 'detect_mobile_device' );
 
@@ -63,7 +65,7 @@ function detect_mobile_device( string $keyword ): string {
         return $keyword;
     }
 
-    $detect = new \Detection\MobileDetect;
+    $detect = new MobileDetect();
     $result = $keyword;
 
     if ($detect->is('iOS') || $detect->is('iPadOS')) {
