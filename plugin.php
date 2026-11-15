@@ -41,7 +41,7 @@ yourls_add_filter( 'get_request', 'detect_mobile_device' );
  * @return   boolean  If query string have shorten url for strtolower($ostype) . $keyword
  *
  */
-function is_link_defined( $keyword ) {
+function is_link_defined( string $keyword ): bool {
     return ! yourls_keyword_is_free( yourls_sanitize_keyword( $keyword ) );
 }
 
@@ -54,7 +54,7 @@ function is_link_defined( $keyword ) {
  * @return   string   strtolower($ostype) . $keyword
  *
  */
-function detect_mobile_device( $keyword ) {
+function detect_mobile_device( string $keyword ): string {
     /**
      * do not apply mobile detection for valid user
      * or it will break "stats" feature: http://short.en/keyword+ (endwith +)
